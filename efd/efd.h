@@ -9,12 +9,13 @@ struct EFD_pmMessage {
 };
 
 #pragma once
-typedef void (WINAPI *RecvCallbackFun)(char * url);
-typedef void (WINAPI* SendCallbackFun)(char* url);
-/*
-typedef void (WINAPI *RecvCallbackFun)(int* pmmessage,char * url,char * head,char * cookie,unsigned int raw, unsigned int rawLen);
-typedef void (WINAPI* SendCallbackFun)(int* pmmessage, char* url, char* head, char* cookie, unsigned int post, unsigned int postLen);
-*/
+
+//typedef void (WINAPI *RecvCallbackFun)(char * url);
+//typedef void (WINAPI* SendCallbackFun)(char* url);
+
+typedef void (WINAPI *RecvCallbackFun)(EFD_pmMessage* pmmessage,char * url,char * head,char * cookie,unsigned int raw, unsigned int rawLen);
+typedef void (WINAPI* SendCallbackFun)(EFD_pmMessage* pmmessage, char* url, char* head, char* cookie, unsigned int post, unsigned int postLen);
+
 extern "C" _declspec(dllexport) int __stdcall InitFiddler(int port, int callback);
 extern "C" _declspec(dllexport) void __stdcall CloseFiddler();
 extern "C" _declspec(dllexport) void __stdcall AutoStartFiddlerProxy(bool start);
