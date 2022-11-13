@@ -11,6 +11,17 @@
 - 拦截修改请求及响应数据
 - 支持WEBSOCKET链接的拦截与修改
 
+## 编译
+- 使用Visual Studio 2019开发环境
+- Windows SDK 10.0.19041.0
+- 打开efd.sln
+- 切换到`debug x86`模式下编译
+
+## 使用
+### 易语言
+- 编译成功后将efd.dll FiddlerCore4.dll makecert.exe放到源码目录下
+- 运行vcfiddlerDemo.e源码并运行即可调用例子
+
 
 ## 2021-4-28
 - 增加了发送数据的监听
