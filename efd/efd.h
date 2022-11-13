@@ -13,11 +13,26 @@ struct EFD_pmMessage {
 //typedef void (WINAPI *RecvCallbackFun)(char * url);
 //typedef void (WINAPI* SendCallbackFun)(char* url);
 
+//触发响应数据的回调参数
+//pmmessage - 指针,在操作修改数据包时才需要提供
+//url - 监听到的网址
+//head - 监听到的协议头信息
+//cookie - 监听到的cookie
+//raw - 监听到的响应主体数据指针开始地址
+//rawLen - 监听到的响应主体数据长度
 typedef void (WINAPI *RecvCallbackFun)(EFD_pmMessage* pmmessage,char * url,char * head,char * cookie,unsigned int raw, unsigned int rawLen);
+
+//触发请求数据的回调参数
+//pmmessage - 指针,在操作修改数据包时才需要提供
+//url - 监听到的网址
+//head - 监听到的协议头信息
+//cookie - 监听到的cookie
+//post - 监听到的请求POST数据指针开始地址
+//rawLen - 监听到的请求POST数据长度
 typedef void (WINAPI* SendCallbackFun)(EFD_pmMessage* pmmessage, char* url, char* head, char* cookie, unsigned int post, unsigned int postLen);
 
 //初始化运行Fiddler服务
-extern "C" _declspec(dllexport) int __stdcall InitFiddler(int port, int callback);
+extern "C" _declspec(dllexport) int __stdcall InitFiddler(int port, int recvCallback, int sendCallback);
 
 //关闭Fiddler服务
 extern "C" _declspec(dllexport) void __stdcall CloseFiddler();
