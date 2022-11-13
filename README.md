@@ -16,11 +16,19 @@
 - Windows SDK 10.0.19041.0
 - 打开efd.sln
 - 切换到`debug x86`模式下编译
+- 使用快捷键Ctrl+B 或者打开菜单的 生成-生成efd 执行编译
 
 ## 使用
+- 所有函数请查看efd.h头文件,已做注释说明.
+> 只要知道如何调用外部DLL那么基本上轻而易举的使用本项目
+
 ### 易语言
-- 编译成功后将efd.dll FiddlerCore4.dll makecert.exe放到源码目录下
+- 将编译成功后的efd.dll FiddlerCore4.dll makecert.exe放到vcfiddlerDemo.e源码目录下
 - 运行vcfiddlerDemo.e源码并运行即可调用例子
+- 源码提供了简单的请求/响应数据的监听及修改
+
+### JAVA
+暂无例子...
 
 
 ## 2021-4-28
