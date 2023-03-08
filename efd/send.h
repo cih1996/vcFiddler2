@@ -45,6 +45,7 @@ int  __stdcall SendReplaceURL(EFD_pmMessage* pmmessage,char* rawUrl, char* newUr
 
 //send Ìæ»»POSTµÄÊý¾Ý
 int  __stdcall SendReplacePost(EFD_pmMessage* pmmessage, char* rawPost, char* newPost) {
+	
 	int index = nextPmIndex(pmmessage);
 	EFD_pmMessage pm = *(pmmessage + index);
 	pm.type = SEND_REPLACE_POST;
